@@ -79,15 +79,16 @@ def criar_conta(agencia, numero_conta, usuarios):
     print("\n@@@ Usuário não encontrado, criação de conta encerrada! @@@")
 
 def listar_contas(contas):
+    print("=" * 100)
     for conta in contas:
         linha = f'''
         Agência:\t{conta['agencia']}
         C/C:\t\t{conta['numero_conta']}
         Titular:\t{conta['usuario']['nome']}
         '''
+        print(textwrap.dedent(linha))
     print("=" * 100)
-    print(textwrap.dedent(linha))
-
+    
 def main():
     LIMITE_SAQUES = 3
     AGENCIA = "0001"
